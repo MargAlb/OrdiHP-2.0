@@ -1,0 +1,1735 @@
+@charset "utf-8";
+
+/* Droid Sans */
+@font-face {
+        font-family: 'Droid Sans';
+        font-style: normal;
+        font-weight:400 700;
+        src: local('fonts'),
+                /* Super Modern Browsers */
+             url('../fonts/DroidSans.woff2') format('woff2'),
+                /* Safari, Android, iOS */
+             url('../fonts/droid-sans/DroidSans.ttf') format('truetype');
+             
+      }
+
+/* Droid Serif */
+@font-face {
+        font-family: 'Droid Serif';
+        font-style: italic;
+        font: weight 400;
+        src: local('fonts'),
+                /* Super Modern Browsers */
+             url('../fonts/DroidSerif-Italic.woff2') format('woff2'),
+                /* Safari, Android, iOS */
+             url('../fonts/droid-serif/DroidSerif-Italic.ttf') format('truetype'); 
+      }
+
+
+/**********************************************************************
+* CSS-Design
+* Monatsaufgabe_08 (März) Responsive Startseite des bisherigen Projektes ODER 
+* responsiver OnePager, inhaltlich u. optisch passend zum bisherigen Projekt
+* Albert Margreiter
+Aufgabenstellung: 
+        Mediaqueries mit passenden Breakpoints
+        gute Optik und Bedienbarkeit
+        Passende Neuanordnung der Inhalte für kleine Auflösungen, Navigation
+        Implementierung eines FAVICONs
+        valider Code
+        saubere Dokumentation
+************************************************************************/
+
+/* *****************************************************************
+   *****************************************************************
+                        Für ALLE Elemente gültige Defintionen
+   *****************************************************************
+   *****************************************************************
+*/
+
+/* Reset * * * * * * * * */
+*{
+        margin: 0;
+        padding: 0;
+        /* Alternatives Boxmodell */
+        -mozbox-sizing: border-box;    
+        -webkit-box-sizing: border-box;    
+        box-sizing: border-box;       
+}
+
+html{        
+        font-size: 100%; /* Browserstandard: 16px = 1em */
+        /* Sticky-Footer */
+        min-height: 100%;
+        position: relative;
+}
+img{
+        max-width: 100%; /* Bilder immer auf max. Browserseite anpassen */
+}
+
+
+/* *****************************************************************
+                   STANDARD LAYOUT
+   ***************************************************************** */
+
+/* ############  body ############ */
+body{
+        /* Standard Schriftsatz/Farbe/Größe/Style */
+        
+        font: 400 18px/24px'Droid Sans', Helvetica, Arial, sans-serif;
+        color:  #1a237e;
+        
+}
+
+/* ################## wrapper #################       */
+.wrapper{
+        /* background: #ff00ff;        */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0px 10px;
+        overflow: hidden;
+
+}
+
+
+/* ****************** header, footer ****************** */
+/*      Definition Hintergrundfarbe, Höhe, 
+        Abstand vom oberen Rand, Breite
+        Fixe Position, header 50px vom oberen Rand
+        Immer im Vordergrund (z-index)
+*/
+
+header, footer{
+        /* background: #1a237e; */
+        background: #253593;
+        width: 100%;
+}
+header{
+        padding: 10px;
+}
+/* .logo{
+        display: block;
+        float: left;
+} */
+
+/* footer mit Flexbox */
+.flexfooter{
+        display: flex;
+        justify-content:space-between;
+}
+
+footer{
+        padding-bottom: 20px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: -5;
+}
+footer p{
+        font-size: 14px;
+        margin-top: 20px;
+        color: #fff;
+}
+.style1{
+        font-size: 16px;
+}
+
+.distance{
+        margin-left: 15px;
+}
+/* Umsetzung eines "Sticky Footers"                       */
+footer a{
+        color: #fff;
+        color: #80dbe6;
+        text-decoration: underline;
+        font-size: 16px;
+        line-height: 26px;
+        padding: 1px;
+}
+footer a:hover{
+        color: #0000ff;
+        background: #fff;
+        font-size: 16px;
+        border-radius: 2px;
+}
+footer .right{
+        float: right;
+}
+footer .left{
+        float: left;
+}
+/* ************************************************ */
+
+/* ************** Haupt- NAVIGATION *************** */
+/* Hauptnavigation Umbau auf Flexbox Design mit Menu-Button für kleinsten media screen */
+/* 13.5.2021 */
+
+.menuleiste{
+        padding: 7px 0 0 0;
+        display: flex;
+        justify-content: space-between;
+}
+.logo{
+        /* justify-content: flex-end; */
+        margin-top: 5px;
+}
+
+.menubtn{
+        /* display: none; */
+        /* text-align: center; */
+        display: flex;
+        flex-direction: column-reverse;
+}
+.menuicon{
+        display:none;
+}
+#navigation{
+        display: flex;
+        padding: 0px 20px;
+}
+/* .vis{
+        display: none;
+} */
+#navigation li{
+        display: flex;
+        flex-direction: column-reverse;
+        /* background:#75ccb9;  */
+        list-style: none;
+        padding: 3px 0px;
+        border-radius: 1px;
+}
+#navigation a{
+        color: #fff;
+        background: #a7ffeb;
+        background: #75ccbe;
+        padding: 2px 20px;
+        border-radius: 2px;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: 'Droid Sans', Arial, Helvetica, sans-serif;
+        transition: all 0.15s linear 0s;
+}
+#navigation li a:hover{
+        color: #534bae;
+        background: #dbffff;
+}
+#navigation li a.active{
+        background: #a7ffeb;
+        color: #534bae;
+}
+
+/* ************************************************************* */
+
+
+
+/* ********** ALLGEMEINE Typografie, Definitionen ************** */
+body{
+        font-size: 100%;
+}
+p{
+        font-size: 14px;
+        font-size: 0.875rem;
+        line-height: 20px;
+        line-height: 1.25rem;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Droid Serif', Georgia, serif;
+	font-style: italic;
+        font-weight: normal;
+        color: #2c3133;
+        text-align: left;
+}
+h1{
+        font-size: 48px;
+        font-size: 3.0rem;
+        line-height: 52px;
+        line-height: 3.75rem;
+        /* text-shadow: 2px 2px #b5b5b5;  */
+}
+h2{
+        font-size: 43px;
+        font-size: 2.7rem;
+        line-height: 40px;
+        line-height: 3.38rem;
+        /* margin-left: 0px; */
+}
+h3{
+        font-size: 38px;
+        font-size: 2.4rem;
+        line-height: 36px;
+        line-height: 3.0rem;
+}
+h4{
+        font-size: 33px;
+        font-size: 2.1rem;
+        line-height: 30px;
+        line-height: 2.63rem;
+}
+h5{
+        font-size: 28px;
+        font-size: 1.8rem;
+        line-height: 26px;
+        line-height: 2.25rem;
+}
+h6{
+        font-size: 25px;
+        font-size: 1.5rem;
+        line-height: 24px;
+        line-height: 1.88rem;
+}
+/* ********************************************************************** */
+
+
+/* #################### ALLGEMEINE Raster Definition #################### */ 
+.column {
+        float: left;
+}
+
+.full{width: 100%;}
+.half{width: 48%;}
+
+.full { 
+        width: 100%; 
+} 
+.third { 
+width: 32%; 
+} 
+        
+.two-thirds { 
+        width: 66%; 
+} 
+        
+.fourth { 
+        width: 23%; 
+        margin-top: 15px;
+        margin-right:1%;
+        margin-left:1%;
+        /* background: #fff; Farbe für Test */
+        padding: 0;
+} 
+        
+.three-fourth {
+        width:74.5%;
+}
+
+.row{
+        width: 100%;
+        float: left;
+}
+
+/* ************+ Startseite: ************+  */
+/* zentrieren von Text */
+.txtctr{
+        text-align: center;
+        margin: 10px 0;
+        margin-top: 40px;
+}
+/* ************************************************************* */
+
+/* #################### Teaser main headlines für Start- und Unterseiten ####################### */
+/* Es gibt 6 Teaser
+        1. für Startseite: main
+        2. für p1_wir: p1_teaser
+        3. für p2_wann: p2_teaser
+        4. für p3_was: p3_teaser
+        5. für p4_notfall: p4_teaser
+        6. für p5_kontakt: p5_teaser
+*/
+
+/* Teaser main: Startseite */
+#main{
+        width: 100%;
+        background: #fff;
+}
+
+.img-fit{
+        width: 100%;
+        object-fit:cover;
+        height: 500px;
+}
+
+.mobile{
+        display: none;
+}
+
+/* headlines Positionierung */
+/* main */
+.headlines{
+        background: #1666c030;
+        /* display: block; */
+        position:absolute;
+        margin: 0 auto;
+        /* margin-left: 300px; */
+        top: 130px;
+        /* top: 12.5rem; */
+        z-index: 10;
+        padding: 0 10px;
+}
+#main.p5{
+display: flex;
+justify-content: center;
+}
+
+
+/* headline main */
+.pos_main{
+        /* margin-top: 100px; */
+        margin-left: 300px;
+}
+/* headline p1 */
+.pos_p1{
+        margin-top: 150px;
+        margin-left: 100px;
+}
+.pos_p2{
+        margin-top: 280px;
+        margin-left: 300px;
+}
+.pos_p3{
+        margin-top: 280px;
+        margin-left: 40px;
+}
+.pos_p4{
+        margin-top: 250px;
+        margin-left: 0px;
+}
+#main .pos_p4 h1{
+        color: #f91515;
+        color: #b00020;
+        font-size: 4rem;
+}
+#main .pos_p4 h2{
+        color: #f91515;
+        color: #b00020;
+        margin-top: 70px;
+}
+
+
+
+#main h1{
+        color: #f9f9d9;
+        color: #fff8e4;
+        /* color: #0000ff; */
+        text-shadow: 2px 2px #000;
+        /* margin: 9.375rem 0 50px 100px; */
+        margin-bottom: 20px;
+}
+#main h2{
+        color: #f9f9d9;
+        color: #fff8e4;
+        /* color: #2c3133; */
+        text-shadow: 2px 2px #000;
+        font-size: 2.25rem;
+        line-height: 50px;
+        line-height: 2.5rem;
+        font-weight: 600;
+        margin-left: 100px;
+        margin-top: 0px;
+        margin-top: 0.8rem;
+}
+#main h3{
+        /* color: #e859a7; */
+        /* color: #cf146e; */
+        color: #2d2983;
+        color: #0d48a1;
+        text-shadow: 1px 1px #fff;
+        text-align: right;
+        font-size: 24px;
+        font-style: italic;
+        line-height: 30px;
+        font-weight: 600;
+        margin-right: 100px;
+        margin-top: 50px;
+
+        float: right;
+        background: #f9f9d9a0;
+        /* background: #fff; */
+        border-radius: 3px;
+        /* width: 250px; */
+        text-align: center;
+        padding: 0.125rem 0.313rem;
+}
+
+/* **************** Aktuelle infos ***************** */
+/* Info-Button: beim hovern auf den roten umschalten */
+
+#info{
+        /* Positionierung des Popup Fensters in der Mitte, d.h. bei 80% Breite,
+        mit 50% von links u. -40% linkem Rand bleiben immer 20% Rand links 
+        und 20% Rand rechts!  */
+        width: 80%;
+        left: 50%;
+        margin-left: -40%;
+        /* padding: 0 50px; */
+        position: absolute;
+        top: 110px;
+        z-index: 30;
+        /* display: none; */
+        border: 3px solid #114ed0;
+}
+/* Urlaubs-Hinweis: Größe definieren */
+
+.info_close{
+        text-align: center;
+        border: 1px solid #40cfe0;
+}
+
+.info-text{
+        display: block;
+        padding: 0px 20px;
+        /* margin: 20px 0; */
+}
+.info_headline{
+        display: flex;
+        justify-content: space-around;
+        padding: 20px 20px;
+        align-items: center;
+}
+.hell{
+        padding: 20px 0;
+        background: #dbffff;
+}
+.dunkel{
+        padding:20px 0;
+        background: #75ccb9;
+}
+.info_titel{
+        background: #4c84e3;
+        background: #1a77d2;
+        background: #534bae;
+        padding: 5px 0;
+}
+.info_titel h1{
+        color: #fff;
+}
+.x-close{
+        border: 2px solid #fff;
+        border-radius: 6px;
+}
+.titel h1, .titel img {
+        text-decoration: underline;
+}
+.info-text h2{
+        text-align: center;
+        margin-top: 0.2rem;
+}
+.info-text h5{
+        text-align: center;
+        margin: 0.1rem 0;
+        line-height: 3rem;
+}
+.info-text h6{
+        text-align: center;
+        margin: 0.1rem 0;
+        line-height: 3rem;
+}
+
+/* Nachfolgende nicht in Verwendung */
+/* ******************************** */
+#infotxt{
+        display: none;
+        width: 100%;
+        /* height: 70px; */
+        padding: 20px 0;
+        /* background: #73e96c; */
+        background: #24fe62;
+        position: fixed;
+        top: 93px;
+        /* left: 120px; */
+        z-index: 20;
+}
+#infotxt h1{
+        text-align: center;
+        color: #114ed0;
+}
+/* ************************************ */
+
+
+/* *****************************************************************
+   *****************************************************************
+                ENDE Für ALLE Elemente gültige Defintionen
+   *****************************************************************
+   *****************************************************************
+*/
+
+
+/* *****************************************************************
+   *****************************************************************
+    NUR Für EINZELNE BEREICHE ABER ALLE Seiten geltende Defintionen
+   *****************************************************************
+   ***************************************************************** */
+
+/* ####################  Allgemeine content Eigenschaften #################### */
+/*      CONTENT: ist jeder Seite vorhanden, gleichen Grundstrukturen und Eigenschaften
+        Definition Hintergrund
+        Fontstyle für Link
+*/
+#content{
+        float: left;
+        width: 100%;
+        /* background:#fefdef; */
+        background:#fff;
+        margin:0 auto;
+        margin-top: -20px;      /* Abstand zwischen #main und #content */
+}
+
+
+
+/* ### Link Eigenschaften in allen content Containern ### */
+
+/* ***************** AKTUELLES ***************** */
+/*      ACTUAL Block bzw. seitl. Buttons:   
+        Definition eines Block mit Text über ganze Breite als Link
+        über class block, mit Hover Effekt
+
+
+/* Positionierung der Buttons für AKTUELLES */
+.btnleft{left: 50px;}
+.btnright{
+        float: right;
+        right: 50px;
+}
+
+/* div actual als block definieren, mit hovern beim Überfahren mit dem Cursor */
+
+/* ***************** ENDE ## AKTUELLES ***************** */
+
+/* ****************** CONTAINER pfeil ****************** */
+/* PFEIL NACH OBEN, in den längeren Seiten verwendet */
+#arrow_up{
+        display: block;
+        text-align: center;
+        /* width: 100%; */
+        margin-bottom: 110px;
+        background: #fff;
+}
+
+.pos_rel{
+        position: relative;
+}
+
+
+/* *****************************************************************
+   *****************************************************************
+    NUR Für BESTIMMTE BEREICHE EINZELNER Seiten geltende Defintionen
+   *****************************************************************
+   ***************************************************************** */
+
+/* ***************************************************************************** */
+/* #################### STARTSEITE-spezifische Formatierungen #################### */ 
+
+/* ### Button Formatierungen auf Startseite ### */
+.button{
+        background: #f7f4ed00;
+        background: #e040bc;
+        background: #114ed0;
+        background: #8c14b0;
+        background: #822593;
+	padding: 4px 10px;
+        color: #fff;
+        text-align: center;
+        width: 150px;
+        text-decoration: none;
+        font-size: 28px;
+        font-size: 1.75rem;
+        line-height: 30px;
+	border-radius: 8px;
+	text-shadow: 1px 1px #842e08;
+}
+
+.button{
+        display: block;
+        margin: 0 auto;
+        /* margin: 10px 0 0 100px; */
+}
+.button:hover{
+	background:#fff;
+	color: #0000ff;
+	text-shadow: none;
+        text-decoration: none;
+}
+.distbottom{
+        margin-bottom: 10px;
+}
+.txtform{
+        display: block;
+        /* background: #f7f4edc0; */
+        padding: 5px 10px;
+        text-align: center;
+        /* margin: 0 auto; */
+        margin: 10px 0;
+        width: 100%;
+}
+
+/*  Formatierung für Spalten auf STARTSEITE  */
+/* row (REIHE) Hintergrund, Schrift, Abstände */
+.format_row p{                            /* Fließtext in Spalten Formatieren */
+        color: #2c3133;
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 24px;
+        line-height: 1.5rem;
+        margin: 0px 0 0 0;
+}
+
+/* Halbe-Spalten auf Startseite */
+.half-lt, .half-rt { 
+        /* background: #fff; für Testzwecke */
+        width: 49%; 
+        height: 100%;
+        margin-top: 10px;
+        /* margin: 0 0; */
+        /* padding: 0; */
+} 
+.half-lt{float: left;}
+.half-rt {float: right;} 
+
+/* #################### ENDE STARTSEITE-spezifische Formatierungen #################### */ 
+/* ************************************************************************************ */
+
+
+/* ************************************************************************************ */
+/* #################### Formatierungen für Seite p1, p2, p3 #################### */
+
+/* Farbe für helle und dunkle Balken */
+/* in P1, P2, P3 in Verwendung */
+.dark{
+        background: #a7ffeb;
+        padding: 0px 0px;
+        /* width: 100%; */
+}
+.bright{        
+        background: #fff;
+        padding: 0px 0;
+
+}
+.txt li{
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+}
+
+.txt ul{
+        margin-top: 20px;
+}
+
+/* Flexboxen für row mit Bilder und Text */
+/* P1 und P3 in Verwendung */
+/* lins zentriert */
+.flexleft, .flexright{
+        display: flex;
+        padding: 20px 0;
+/*        margin-left: 300px;
+        margin-right: 300px;*/
+}
+/* rechts zentriert */
+.flexright{
+        justify-content: flex-end;
+        /* justify-content: right; */
+}
+
+.txt{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 40px;
+        margin-right: 40px;
+}
+
+.p1 h1, .p1 h3{
+        padding: 10px 0;
+}
+.p3 ul{
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 15px;
+}
+.p3 li{
+        margin-top: 15px;
+}
+.p3 h2{
+        margin-left: 15px;
+        margin-top: 10px;
+}
+.p3 li{
+        font-size: 1.8rem;
+        line-height: 2.25rem;
+}
+/*  Liste */
+ul#bilder{
+        margin: 10px 0 0 30px;
+}
+ul#bilder li{
+        font-size: 16px;
+}
+ul li{
+        margin-left: 15px;
+}
+/* Text, Absätze */
+.impressum p, .datenschutz p{
+        margin: 10px 0 0 0;
+}
+
+.flexcenter{
+        display: flex;
+        justify-content: center;
+        padding: 10px 0px;
+        align-items: center;    /* und text Zeienmittig positionieren */
+}
+
+
+.bereitschaft{
+        display: flex;
+        padding: 20px 0;
+}
+.bereitschaft h4{
+        justify-content: space-between;
+        text-align: center;
+        
+}
+
+
+.aeklink{
+        display: block;
+        background: #40cfe0;
+}
+.aeklink a{
+        line-height: 2.2rem;
+}
+.aeklink:hover{
+        background:#114ed0;
+}
+.link{
+        display: flex;
+        margin: 20px 0;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+}
+
+.link a{
+        display: block;
+        font-size: 2rem;
+        color: #2c3133;
+        text-decoration: none;
+        padding: 20px 20px;
+}
+.link a:hover{
+        background: #114ed0;
+        color: #fff;
+}
+
+/* #################### ENDE Formatierungen für Seite p1 WER #################### */ 
+/* ************************************************************************************ */
+
+/* ************************************************************************************ */
+/* ####################  Formatierungen für p2 WANN #################### */ 
+/* Ordinationszeiten - Überschrift */
+
+.hline{
+        text-transform: uppercase;
+        text-align: center;
+        /* padding: 20px 0px; */
+        margin-top: 50px;       /* Abstand zum Teaser Bild */
+        margin-bottom: 20px;
+}
+.hline h1, .hline h2{
+        text-align: center;
+}
+
+
+/* Ordinationszeiten Spaltenüberschrift */
+.hlinebackgrnd{
+        background: #66ccff25;
+}
+
+.alignright{
+        float: right;
+        margin: 10px 0 10px 0px;
+}
+.alignleft{
+        float: left;
+        margin: 10px 0px 10px 0;
+}
+
+.mobon{
+        display: none;
+}
+.moboff{
+        display: block;
+        padding: 20px 0;
+}
+.closed{
+        text-align: center;
+        /* background:#ffeb3b; */
+        padding: 20px 0px;
+        margin: 0 5px; 
+        display: block;
+}
+
+.tage h4{
+        text-align: center;
+        padding: 20px 0;
+}
+.tage h3{
+        margin-left: 20px;
+}
+.mitte{                         /* VORM/NACHM zentriert ausrichten */
+        text-align: center;
+        /* padding: 5px 0; */
+}
+
+
+/* #################### ENDE Formatierungen für p2 WANN #################### */ 
+/* ************************************************************************************ */
+
+
+/* ************************************************************************************ */
+/* #################### p4 NOTFALL #################### */ 
+
+#content .notfall h2, #content .notfall h1{
+        text-align: center;
+        padding: 20px 0;
+}
+.notfallnr{
+        display: flex;
+        justify-content: space-around;
+        padding: 30px 0;
+}
+.flex{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+}
+.flex h2{
+        text-align: center;
+}
+.NR{
+        color: #f91515;
+        color: #b00020;
+        margin-top: 15px;
+}
+.notfallmeldung{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 20px 0;
+}
+
+.antwort{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+.antwort h4{
+        margin-top: 30px;
+        text-align: center;
+}
+.notfallmeldung h1, .antwort h5{
+        color: #f91515;
+        color: #b00020;
+}
+
+.gift{
+        justify-content: center;
+}
+.frage{
+        flex-basis: 50%;
+}
+
+.top_p4{
+        display: block;
+        margin-top: 150px;
+}
+
+/* #################### ENDE Formatierungen für p4 NOTFALL #################### */ 
+/* ************************************************************************************ */
+
+
+/* ************************************************************************************ */
+/* #################### p5 KONTAKT #################### */ 
+
+.kontakt{
+        padding: 20px;
+}
+.kontakt h1, .kontakt h2{
+        text-align: center;
+        padding: 5px 0;
+}
+.flexbox{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        padding: 20px 0px;
+        margin: 0 10px;
+}
+.flexbox p{
+        color: #000;
+        font-size: 1.2rem;
+        line-height: 1.65rem;
+}
+.flexbox a{
+        font-size: 1.2rem;
+}
+
+.box1{
+        width: 100px;
+}
+.mail{
+        display: flex;
+}
+
+.position{
+        margin-top: 0px;
+}
+
+
+/* Google Maps integrieren */
+.framesize{
+        width: 600px;
+        height: 400px;
+}
+.framepos{
+        width: 600px;
+        position: relative;
+}
+.position{
+        position: absolute;
+        width: 80%;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        color: #000;
+        text-align: center;
+}
+.size{
+        line-height: 1rem;
+        font-size: 1.2rem;
+        background: #fff;      
+}
+
+.map-responsive{
+        overflow:hidden;
+        padding-bottom:56.25%;
+        padding-bottom:30%;
+        position:relative;
+        height:0;
+}
+.map-responsive iframe{
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        position:absolute;
+}
+
+/* #################### ENDE Formatierungen für p5 KONTAKT #################### */ 
+/* ************************************************************************************ */
+
+
+
+
+
+
+/* ************************************************************************************ */
+/* #################### INFO Seite #################### */ 
+
+.flex-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+}
+.flex-info h1{
+        text-align: center;
+        margin-top: 1.5rem;
+        color: #fff;
+}
+
+/* #################### ENDE Formatierungen für INFO Seite #################### */ 
+/* ************************************************************************************ */
+
+
+/* ************************************************************************************ */
+/* ####################  #################### */ 
+
+
+/* #################### ENDE Formatierungen für  #################### */ 
+/* ************************************************************************************ */
+
+/* ************************************************************************** */
+/* IMPRESSUM und DATENSCHUTZ-Seite - spezifische Formatierungen */
+/* ************************************************************************** */
+
+/* CONTAINER teaser - Höhendefinition, zwecks Abstand zu actual CONTAINER */
+#teaser{
+        height: 10px;
+}
+#impcontent,#datcontent, .cert{
+        background: #fff;
+}
+.datenschutz, .impressum{
+        padding:20px;
+}
+.datenschutz p, ul li, .impressum p{
+        font-size: 0.9rem;
+        line-height: 1.2rem;
+        color: #000;
+}
+.datenschutz h1{margin-top: 20px;}
+.datenschutz h2{margin-top: 20px;}
+.datenschutz h3{margin-top: 20px;}
+.datenschutz h4{margin-top: 20px;}
+.datenschutz h5{margin-top: 20px;}
+.datenschutz h6{margin-top: 20px;}
+
+.impressum h1{margin-top: 20px;}
+.impressum h2{margin-top: 20px;}
+.impressum h3{margin-top: 20px;}
+.impressum h4{margin-top: 20px;}
+.impressum h5{margin-top: 20px;}
+.impressum h6{margin-top: 20px;}
+
+
+/* ************************************************************ */
+/*                  OFG ZERTIFIKAT                              */
+/* ************************************************************ */
+.cert{
+        margin-top: 0px;
+}
+/* ************************************************************ */
+
+/* ************************************************************ */
+/*                  ENDE                                        */
+/* IMPRESSUM und DATENSCHUTZ-Seite - spezifische Formatierungen */
+/* ************************************************************ */
+
+
+/* ***************************************************************** */
+/* ***********   MEDIA QUERIES ************************************* */ 
+/* ***************************************************************** */
+
+@media only screen and (min-width: 980px) and (max-width: 1279px) {
+            /* Blau */
+        /* header{    
+            background: #158996; 
+        }  */
+/* ******************************** */
+
+        .pos_p1{
+                margin-top: 100px;
+                margin-left: 50px;
+        }
+        .pos_p2{
+                margin-top: 200px;
+                margin-left: 300px;
+        }
+        .pos_p3{
+                margin-top: 200px;
+                margin-left: 40px;
+        }
+        .pos_p4{
+                margin-top: 180px;
+                margin-left: 20px;
+        }
+        .img-fit{
+                width: 100%;
+                object-fit: cover;
+                height: 400px;
+        }
+        .tage{
+                padding: 10px 0;
+        }
+        /* P4 Notfall */
+        .notfallnr{
+                padding: 30px 0;
+        }
+
+/* Allgemeine Anpassung Schriftgröße */
+        h1{
+                font-size: 2.8rem;
+                line-height: 3.30rem;
+        }
+        h2, .info_titel h1, .p1 h1{
+                font-size: 2.5rem;
+                line-height: 3.0rem;
+        }
+        h3, .notfallmeldung h1, .info-text h2 {
+                font-size: 2.2rem;
+                line-height: 2.7rem;
+        }
+        h4, .antwort h4, .p1 h3{
+                font-size: 1.9rem;
+                line-height: 2.4rem;
+        }
+        h5, .antwort h5, .info-text h5, .p3 h2{
+                font-size: 1.6rem;
+                line-height: 2.1rem;
+        }
+        h6, .p3 li{
+                font-size: 1.3rem;
+                line-height: 1.8rem;
+        }
+
+        .p3 ul{
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-top: 15px;
+        }
+        .p3 li{
+                margin-top: 15px;
+        }
+        .p3 h2{
+                margin-left: 15px;
+                margin-top: 10px;
+        }
+
+        /* .txt li{
+                font-size: 1.2rem;
+                line-height: 1.7rem;
+        } */
+        #main h1{margin-bottom: 20px;}
+        #main h2{
+                font-size: 1.8rem;
+                line-height: 2.6rem;
+                margin-top: 1rem;
+                margin-left: 50px;
+        }
+        #main h3{margin-top: 0px;
+                margin-right: 50px;
+        }
+        .link a{
+                font-size: 1.7rem;
+        }
+        /* INFO-Text anpassen */
+
+        .mask-fit{
+                width: 100%;
+                object-fit: cover;
+                height: 200px;
+        }            
+        
+}
+    
+@media only screen and (min-width: 760px) and (max-width: 979px) {
+        /* header{      */
+                /* background: #f9953c;   */
+                /* Orange  */
+        /* }   */
+
+        /* .wrapper{
+                padding: 0px 50px;
+        }    */
+
+        .pos_main{
+                margin-top: 50px;
+                margin-left: 20px;
+        }     
+        .pos_p1{
+                margin-top: 150px;
+                margin-left: 50px;
+        }
+        .pos_p2{
+                margin-top: 260px;
+                margin-left: 210px;
+        }
+        .pos_p3{
+                margin-top: 280px;
+                margin-left: 40px;
+        }
+        .pos_p4{
+                margin-top: 230px;
+                margin-left: 20px;
+        }
+        .img-fit{
+                width: 100%;
+                object-fit: cover;
+                height: 400px;
+        }
+        .mask-fit{
+                width: 100%;
+                object-fit: cover;
+                height: 100px;
+        }                
+        .tage{
+                padding: 10px 0;
+        }
+        .picfit{/* fixiert Größe der Bilder, damit sie beim zoomen nicht verzerrt werden */
+                width: 100%;
+                object-fit: cover;
+                height: 400px;
+        }
+
+
+        /* P4 Notfall */
+        .notfallnr{
+                padding: 20px 0;
+        }
+/* Allgemeine Anpassung Schriftgröße */
+        h1{
+                font-size: 2.7rem;
+                line-height: 3.38rem;
+        }
+        h2, #main h1, #main .pos_p4 h1, #content .flex h1, .notfallmeldung h1{
+                font-size: 2.4rem;
+                line-height: 3.0rem;
+        }
+        h3, .info_titel h1, .p1 h1{
+                font-size: 2.1rem;
+                line-height: 2.63rem;
+        }
+        h4, #main h2, .tage h3, #main .pos_p4 h2, #content .flex h2, .antwort h4, .info-text h2, .p1 h3, .p3 h2{
+                font-size: 1.8rem;
+                line-height: 2.25rem;
+        }
+        h5, #main h3, .tage h4, .antwort h5,.info-text h5 {
+                font-size: 1.5rem;
+                line-height: 1.88rem;
+        }
+        h6, .p3 li{
+                font-size: 1.1rem;
+                line-height: 1.38rem;
+        }
+
+        #info{
+                top: 150px;
+        }
+
+        #main h1{margin-bottom: 0px;}
+        #main h2{margin-top: 0.9rem; 
+                margin-left: 100px;
+        }
+        #main h3{margin-top: 50px; 
+                margin-right: 50px;
+                font-weight: 500;
+        }
+
+        /* P3: Text anordnen p1 */
+        .p3 ul{
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-top: 15px;
+        }
+        .p3 li{
+                margin-top: 15px;
+        }
+        .p3 h2{
+                margin-left: 15px;
+                margin-top: 10px;
+        }
+
+        
+        /* NEU NEU NEU ******************************* */
+        /* Flexbox Navigation: umschalten auf vertikal - Design der Navigationsleiste */
+        .menuleiste{
+                flex-direction: column; /* Manüleiste vertikal anordnen */
+                text-align: center;     /* Logo zentrieren */
+        }
+        #navigation{
+                justify-content: center;        /* Navigationsleiste zentrieren */
+                margin-top: 5px;
+        }  
+        /* NEU NEU NEU ******************************* */
+
+
+
+        .link a{
+                font-size: 1.5rem;
+        }        
+        
+        /* .wrapper{ width: 760px; } */
+
+        #main{ max-width: 100%; }
+
+        .full, .half{ width: 100%; }
+        .fourth{ width: 48%; }
+}
+
+
+
+@media only screen and (max-width: 759px) { 
+        /* header{      */
+                /* background: #e040bc;   */
+                /* Pink */
+                /* z-index: 5; */
+        /* }  */
+        /* position: relativ wird mit .pos_rel_reset zurückgesetzt */
+
+        header{
+                height: 170px;
+        }
+
+        #impcontent, #datcontent{
+                margin-top: 0;
+                background: #fff;
+        }
+        #content{
+                margin-top: 280px;
+        }
+        #main{
+                height: 0px;
+        }
+        #content.p4, #content.p5{
+                margin-top: 285px;
+        }
+        
+        .img-fit{
+                width: 100%;
+                object-fit:cover;
+                height: 300px;
+        }
+        .mask-fit{
+                width: 100%;
+                object-fit: cover;
+                height: 50px;
+        }                
+        .picfit{/* fixiert Größe der Bilder, damit sie beim zoomen nicht verzerrt werden */
+                width: 100%;
+                object-fit: cover;
+                height: 300px;
+        }
+        .mapouter{
+                max-width: 600px ;
+        }
+        #info{  /* Info-Popup nahe am Header positionieren */
+                top: 160px;
+                z-index: 3;
+        }        
+        .impressum, .datenschutz{
+                padding: 0 20px;
+        }
+        .pos_p1{
+                margin-top: 90px;
+                margin-left: 40px;
+        }
+        
+        .pos_p2{
+                margin-top: 80px;
+                margin-left: 50px;
+        }
+        .pos_p3{
+                margin-top: 80px;
+                margin-left: 40px;
+        }
+        .pos_p4{
+                margin-top: 60px;
+                margin-left: 10px;
+        }
+        
+        #main .pos_p4 h2{
+                margin-top: 0px;
+        }
+
+        /* P5 Kontakte: Adresskopf, Mail in Flexcontainer vertival */
+        .flexbox{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+        }
+        .flexbox h4{
+                margin-top: 20px;
+        }
+        .flexbox p{
+                margin-top: 5px;
+        }
+
+        .mobile{
+                display:block;
+        }
+        /* Startseite - Bodenabstand der Buttons */
+        .distbottom{
+                margin-bottom: 30px;
+        }
+        
+
+        .info_headline{
+                display: flex;
+                flex-direction: column;
+        }
+        .info_headline h1{
+                text-align: center;
+                margin-bottom: 10px;
+        }
+       
+        /* Allgemeine Anpassung Schriftgröße */
+        h1{
+                font-size: 2.4rem;
+                line-height: 3.0rem;
+        }
+        h2, .kontakt h1{
+                font-size: 2.1rem;
+                line-height: 2.63rem;
+        }
+        h3,  .kontakt h2, #main .pos_p4 h1, #content .flex h1, .notfallmeldung h1, .p2 h1{
+                font-size: 1.8rem;
+                line-height: 2.25rem;
+        }
+        h4,#main h1, #content .flex h2, .antwort h4, .info_titel h1, .p1 h1, .p5 h1{
+                font-size: 1.5rem;
+                line-height: 1.88rem;
+        }
+        h5, .tage h3, .tage h4, #main .pos_p4 h2, .antwort h5, .info-text h2, .p3 h2, .p2 h3, .p5 h2, .p5 h4{
+                font-size: 1.1rem;
+                line-height: 1.38rem;
+        }
+        h6, #main h2, #main h3, .info-text h5, .p1 h3, .p3 li, .p5 p{
+                font-size: 0.8rem;
+                line-height: 1.0rem;
+        }
+
+        .flexcenter{
+                padding: 0 10px;
+        }
+
+        .flexcenter h1{
+                font-size: 1.7rem;
+                line-height: 2.1rem;
+        }
+        .flexcenter h2{
+                font-size: 1.2rem;
+                line-height: 32px;
+                line-height: 1.5rem;
+        }
+        
+        .p1 h1, .p1h2, .p1 h3, .p3 h2{
+                text-align: center;
+        }
+
+
+        .p2 h2, .p1 h3, .p3 h2, .p3 li{
+                padding: 0px;
+                margin-top: 5px;
+        }
+        .p1 h1, .p3 ul{
+                margin-top: 15px; 
+                padding: 0;
+        }
+        
+        /* Info Button */
+       .info_rt, .info_gn{
+                top: 270px;
+        }
+        #infotxt{
+                top: 263px;
+                padding:22px 50px ;
+        }
+        /* p2_wann Tage auf kurz umstellen */
+        .mobon{
+                display: block;
+                padding: 10px 0;
+        }
+        .moboff{
+                display: none;
+        }
+        .tage{
+                padding: 10px 10px;
+        }
+        
+        /* Headline:  positionieren und Abstände definieren */
+        .pos_main{                              
+                margin-top: -80px;
+                margin-left: 30px;
+                z-index: 2;
+        } 
+        #main h1{
+                margin-bottom: 10px;
+                margin-left: 0px;
+        }
+        #main h2{
+                margin-top: 0.5rem; 
+                margin-left: 30px;
+        }
+        #main h3{
+                margin-top: 20px; 
+                margin-right: 20px;
+                font-weight: 600;
+        }
+
+        /* Seite P2: Bereitschaftsdienst anordnen */
+        .bereitschaft{
+                display: flex;
+                flex-direction: column;
+                padding: 5px 0;
+        }
+        .bereitschaft h4{
+                text-align: center;
+                font-size: 1.5rem;
+                line-height: 1.88rem; 
+        }
+
+
+
+        /* NEU NEU NEU***************************** */
+        /* Flexbox Navigation: umschalten auf vertikal - Design der Navigationsleiste */
+        /* Vorbereitungen: */
+        #main{
+                position: absolute ;                /*main fixieren*/
+                top:157px; 
+        }
+        #main.p5{
+                position: absolute;
+                top: 160px;
+        }
+
+        /* Schritt 1: Menüleiste umstellen auf vertikale Anrodnung */
+        .menuleiste{
+                flex-direction: column; /* Manüleiste vertikal anordnen */
+                text-align: center;     /* Logo zentrieren */
+                /* overflow: auto; */
+        }
+        /* Schritt 2: Button (MenüIcon) sichtbar machen mit display: block */
+        .menuicon{
+                display: block;
+                border: 2px solid #fff;         /* Rahmen für Menu-Icon */
+                border-radius: 3px;
+                margin: 0 auto;                        /* Button zentrieren */
+        }
+        /* Schritt 3:  */
+        .menubtn{
+                /* display: flex;    */
+                flex-direction: column;      
+                /*sichtbar machen des Menü-Buttons*/
+                margin-top: 10px;       /* Abstand vom Logo erhöhen */
+                /* padding: 5px 0;      */
+                /* overflow:visible;    */
+                /* height: 100px; */
+                z-index: 5;
+        }
+        #navigation{
+                /* justify-content: center;        /* Navigationsleiste zentrieren */
+                /* display: block; */
+                /* background: chartreuse; */
+                display: flex;
+                flex-direction: column;
+                max-width: 300px;
+                margin: 0 auto;
+                padding: 2px 10px;
+        }
+        #navigation li{
+                /* visibility: hidden; */
+                display: none;
+                /* justify-items: center; */
+                /* text-align: center; */
+                padding: 3px 3px; 
+                z-index: 30;
+                background:#534bae;
+                width: 200px;
+        }
+
+        #navigation li a{
+                text-decoration: none;
+                text-align: center;
+                display: block;
+        }
+
+        .menuicon:hover{
+                background:#75ccb9;
+        }
+
+        
+        /* NEU NEU NEU***************************** */
+
+        .flexleft, .flexright{
+                flex-direction: column;
+                justify-content: center;
+                padding: 10px 10px;
+        }
+
+        .hell, .dunkel{
+                padding: 5px 0;
+        }
+
+        /* Reihenfolge Fotos vor Text in der 2. und 4. Zeile  */
+        .order{
+                order: -1;
+        }
+        
+        .full, .two-thirds, .half, .third, .fourth, .three-fourth, #main, .half-lt, .half-rt{
+        width: 100%;
+        }
+        .fourth{
+                width: 23%;
+        }
+
+        footer a, footer a:hover{
+                font-size: 1rem;
+        }
+        footer .row{
+                margin-left: 20px;
+        }
+        footer p.right{
+                text-align: center;
+                float: none;
+        }
+        .link a{
+                font-size: 1.0rem;
+                line-height: 1.2rem;
+                font-weight: 500;
+        }
+
+        /* P4 Notfall */
+        .notfallnr{
+                padding: 10px 0;
+        }
+        /* P5: Kontakt */
+        .box1{
+                width: 80px;
+        }
+        .mail a{
+                font-size: 0.8rem;
+        }
+        
+        
+        /* Google Maps integrieren ************ */
+        .framesize{
+                width: 300px;
+                height: 200px;
+        }
+        .framepos{
+                width: 300px;
+                position: relative;
+                /* margin-left: 50%; */
+                /* left: -40%; */
+        }
+        .map-responsive{
+                overflow:hidden;
+                padding-bottom:10%;
+                position:relative;
+                height:0;
+        }
+        /* ********************************* */
+        /* flexfooter */
+        .flexfooter{
+                flex-direction: column;
+                align-items: center;
+        }
+        .line{
+                margin-top: 20px;
+                height: 1px;
+                background: #fff;
+                width: 100%;
+        }
+        
+        .format_row p{
+                color: #2c3133;
+                font-size: 12px;
+                font-size: 0.75rem;
+                line-height: 18px;
+                line-height: 1.125rem;
+                margin: -10px 0 0 0;
+        }
+        #arrow_up{
+                margin-bottom: 230px;
+                display: block;
+        }
+        /* ******************** Impressum ******************** */
+
+
+
+}
+
