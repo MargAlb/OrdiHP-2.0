@@ -455,10 +455,12 @@ justify-content: center;
 /* **************** Aktuelle infos ***************** */
 /* Info-Button: beim hovern auf den roten umschalten */
 
+
+/* Positionierung des Popup Fensters in der Mitte, d.h. bei 80% Breite,
+mit 50% von links u. -40% linkem Rand bleiben immer 20% Rand links 
+und 20% Rand rechts!  */
+
 #info{
-        /* Positionierung des Popup Fensters in der Mitte, d.h. bei 80% Breite,
-        mit 50% von links u. -40% linkem Rand bleiben immer 20% Rand links 
-        und 20% Rand rechts!  */
         width: 80%;
         left: 50%;
         margin-left: -40%;
@@ -469,6 +471,16 @@ justify-content: center;
         /* display: none; */
         border: 3px solid #114ed0;
 }
+
+
+/*
+img {
+        max-width: 100%;
+        height: auto;
+}
+*/
+
+
 /* Urlaubs-Hinweis: Größe definieren */
 
 .info_close{
