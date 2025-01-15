@@ -515,6 +515,10 @@ justify-content: center;
         text-align: center;
         margin-top: 0.2rem;
 }
+.info-text h3{
+        text-align: center;
+        margin-top: 0.15rem;
+}
 .info-text h5{
         text-align: center;
         margin: 0.1rem 0;
