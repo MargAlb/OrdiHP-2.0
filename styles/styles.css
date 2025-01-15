@@ -476,7 +476,7 @@ justify-content: center;
         border: 1px solid #40cfe0;
 }
 
-.info-text{
+.info_text{
         display: block;
         padding: 0px 20px;
         /* margin: 20px 0; */
@@ -720,8 +720,6 @@ justify-content: center;
 .flexleft, .flexright{
         display: flex;
         padding: 20px 0;
-/*        margin-left: 300px;
-        margin-right: 300px;*/
 }
 /* rechts zentriert */
 .flexright{
@@ -1208,11 +1206,6 @@ ul li{
         }
         /* INFO-Text anpassen */
 
-        .mask-fit{
-                width: 100%;
-                object-fit: cover;
-                height: 200px;
-        }            
         
 }
     
@@ -1251,11 +1244,7 @@ ul li{
                 object-fit: cover;
                 height: 400px;
         }
-        .mask-fit{
-                width: 100%;
-                object-fit: cover;
-                height: 100px;
-        }                
+                
         .tage{
                 padding: 10px 0;
         }
@@ -1383,11 +1372,6 @@ ul li{
                 object-fit:cover;
                 height: 300px;
         }
-        .mask-fit{
-                width: 100%;
-                object-fit: cover;
-                height: 50px;
-        }                
         .picfit{/* fixiert Größe der Bilder, damit sie beim zoomen nicht verzerrt werden */
                 width: 100%;
                 object-fit: cover;

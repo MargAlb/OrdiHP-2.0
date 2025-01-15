@@ -11,10 +11,10 @@ $(document).ready(function(){
     // }
     // elementResize();        
     // Konstanten Deklarationen:
-    const urlaub = "on";        // on ODER off
+    const oeffnungszeit = "urlaub";        // "oeffnungszeit kann sein: urlaub, geschlossen oder offen"
     //const geschlossen = "off";  //closed ODER off
-    const zusatz_info = "aus"           //Zusatz-Info wird angezeigt
-    // info=off     Zusatz-Info wird nicht angezeigt
+    const zusatz_info = "aus"           //info=ein: Zusatz-Info wird angezeigt
+    // info=aus     Zusatz-Info wird nicht angezeigt
 
     // --------------------------
 
@@ -36,15 +36,23 @@ $(document).ready(function(){
         $("#navigation li").toggle(500, "linear");
     })
 
-    //Urlaub-Seite einblenden, Rest ausblenden
-    if (urlaub=="on"){
-        $(".on").css("display", "block");
-        $(".off").css("display", "none");
-    } else {
-        $(".on").css("display", "none");
-        $(".off").css("display", "block");        
+    if (oeffnungszeit=="offen"){
+        $(".offen").css("display", "block");
+        $(".urlaub").css("display", "none");
+        $(".geschlossen").css("display", "none");
+    } 
+    if (oeffnungszeit=="urlaub"){
+        $(".offen").css("display", "none");
+        $(".urlaub").css("display", "block");
+        $(".geschlossen").css("display", "none");              
     }
+    if (oeffnungszeit=="geschlossen"){
+        $(".offen").css("display", "none");
+        $(".urlaub").css("display", "none");
+        $(".geschlossen").css("display", "block");
+    } 
 
+    
     //Zusatz-Info anzeigen oder ausblenden
     if (zusatz_info=="ein"){
         $(".ein").css("display", "block");

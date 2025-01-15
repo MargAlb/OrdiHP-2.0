@@ -148,39 +148,58 @@
 
 
         <div id="info">
-                <div class="on">
-                        <img src="./docs/urlaub.png" alt="Urlaub">
-                <!--
-                        <img src="./docs/geschlossen.png" alt="Geschlossen">
-                -->
-                </div>   
-                             
-                <div class="off">
+                <!-- Ordination ist geöffnet -->
+                <div class="oeffnungszeit offen"> 
                         <div class="info_titel">
                                 <div class="info_headline">
-                                        <h1>WICHTIGE INFORMATIONEN</h1>
+                                        <h1>AKTUELLE INFORMATIONEN</h1>
                                         <img src="images/x-close_ws.png" width="40" height="40" class="x-close" alt="Info Close">
                                 </div>
                         </div>
-                        <div id="zusatz_info">
-                                <div class="hell ein"> <!-- für ein paar Tage "info-off", wenn Urlaub wieder "off", dann wieder "info-on"-->
-                                        <div class="info-text">
-                                                <h2>Wir sind vom Urlaub zurück!</h2>
-                                                <h5>Seit Montag, 21.8.2023 sind wir wieder für Sie da!</h5>
-                                        </div>
+                        <div class="hell zusatz_info ein">
+                                <div class="info-text">
+                                        <h2>Wir sind vom Urlaub zurück!</h2>
+                                        <h5>Seit Montag, 21.8.2023 sind wir wieder für Sie da!</h5>                             
                                 </div>
                         </div>
-
-                        <div class="dunkel">
+                        <div class="dunkel">                                                      
                                 <div class="info-text">
                                         <h2>Verordnung von Medikamenten</h2>
-                                        <h5>Rezepte: über telefonische Anforderung, ab sofort auch per E-Mail möglich <br>
-                                        <a href="mailto:dr.maria.margreiter@gmail.com">dr.maria.margreiter@gmail.com</a></h5>
+                                        <h5>Rezepte bitte auch per E-Mail engefordert werden<br>
+                                        <a href="mailto:dr.maria.margreiter@gmail.com">dr.maria.margreiter@gmail.com</a></h5> 
                                 </div>
-                        </div>                        
+                        </div>
+                        <div class="hell">
+                                <div class="info-text">
+                                        <h2>Arbeistsunfähigkeit</h2>
+                                        <h5>AU-Meldungen können auch per Mail angefordert werden<br>
+                                        <a href="mailto:dr.maria.margreiter@gmail.com">dr.maria.margreiter@gmail.com</a></h5>                                        
+                                </div>
+                        </div>    
+                </div>
+                
+                <!-- Ordination ist VORÜBERGEHEND geschlossen -->
+                <div class="oeffnungszeit geschlossen"> 
+                        <div class="info_titel">
+                                <div class="info_headline">
+                                        <h1>AKTUELLE INFORMATIONEN</h1>
+                                        <img src="images/x-close_ws.png" width="40" height="40" class="x-close" alt="Info Close">
+                                </div>
+                        </div>
+                        <div class="hell">                      
+                                <div class="info-text">
+                                                <h2>Wir haben heute geschlossen</h2>
+                                                <h5>Vertretung: <br>
+                                                Dr. Ursula Unterrainer-Knoll <br>
+                                                Dr. Dominik Ritzer</h5>                             
+                                </div>
+                        </div>
                 </div>
 
-
+                <!-- Ordination hat URLAUB -->                
+                <div class="oeffnungszeit urlaub">
+                        <img src="./docs/urlaub.png" alt="Urlaub">
+                </div>  
         </div>
 
         <!-- ********************************************** -->
