@@ -11,7 +11,7 @@ $(document).ready(function(){
     // }
     // elementResize();        
     // Konstanten Deklarationen:
-    const oeffnungszeit = "urlaub";        // "oeffnungszeit kann sein: urlaub, geschlossen oder offen"
+    const oeffnungszeit = "offen";        // "oeffnungszeit kann sein: urlaub, geschlossen oder offen"
     //const geschlossen = "off";  //closed ODER off
     const zusatz_info = "aus"           //info=ein: Zusatz-Info wird angezeigt
     // info=aus     Zusatz-Info wird nicht angezeigt
